@@ -16,10 +16,9 @@ function HomePage() {
 	
 	const [inputValue, setInputValue ] = useState('');
 	
-	
 	const handleInputChanges = (event)=>{
 		setInputValue(event.target.value)
-		//getNews()
+		//getNews().then(data=>{setNews(data)});
 	}
 	
 	return (

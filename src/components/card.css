@@ -1,0 +1,54 @@
+.news-card-block{
+    display: flex;
+    align-items: stretch;
+    margin-bottom: 20px;
+}
+
+.news-card-block > a {
+    display: flex;
+    color: black;
+}
+
+.news-card-block > a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.card {
+    padding: 20px;
+    border: 1px solid #E7E7E7;
+    border-radius: 10px;
+    box-shadow: 10px 10px 34px -16px rgba(0, 0, 0, 0.32);
+    -webkit-box-shadow: 10px 10px 34px -16px rgba(0, 0, 0, 0.32);
+    -moz-box-shadow: 10px 10px 34px -16px rgba(0, 0, 0, 0.32);
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+.card > h2 {
+    min-height: 115px;
+}
+.card > h2:hover {
+    text-decoration: underline;
+}
+
+.card > p {
+    margin-top: 25px;
+}
+
+.card > h2, p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.news-image {
+    padding-top: 56.25%;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
