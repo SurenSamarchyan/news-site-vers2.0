@@ -1,17 +1,53 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import { useState } from 'react';
+// Data
+import newsListObject from "./newsObject";
+// Component
+import Card from "./components/card";
+import Input from "./components/input";
+
+//Style
+import 'bootstrap/dist/css/bootstrap.css';
+import Row from 'react-bootstrap/Row';
+import './index.css'
+
+function HomePage() {
+	
+	const [inputValue, setInputValue ] = useState('');
+	
+	const handleInputChanges = (event)=>{
+		setInputValue(event.target.value)
+		//getNews().then(data=>{setNews(data)});
+	}
+	
+	return (
+		<div>
+			<input onChange={handleInputChanges}>
+			</input>
+			<div>{inputValue}</div>
+			<div id='news-container' className='container-fluid'>
+				<Row>
+					{newsListObject.articles.map((news, index) => {
+						return (
+							<Card
+								key={index}
+								cardIndex={index}
+								url={news.url}
+								title={news.title}
+								urlToImage={news.urlToImage}
+								description={news.description}
+							/>
+						)
+					})}
+				</Row>
+			</div>
+		</div>
+	)
+}
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+	<HomePage/>,
+	document.getElementById('root')
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();

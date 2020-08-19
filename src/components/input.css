@@ -1,0 +1,11 @@
+#news-search {
+    margin-bottom: 20px;
+}
+.button_search_news {
+    border-radius: 100px;
+}
+
+.form-control form {
+    display: flex;
+    justify-content: center;
+}
