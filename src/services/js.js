@@ -15,11 +15,11 @@ import Row from 'react-bootstrap/Row';
 import './index.css'
 
 function HomePage() {
-/*	const [inputValue, setInputValue ] = useState('');
-	const handleInputChanges = (event)=>{
-		setInputValue(event.target.value)
-		//getNews().then(data=>{setNews(data)});
-	}*/
+	/*	const [inputValue, setInputValue ] = useState('');
+		const handleInputChanges = (event)=>{
+			setInputValue(event.target.value)
+			//getNews().then(data=>{setNews(data)});
+		}*/
 	
 	
 	/*<input onChange={handleInputChanges}>
@@ -53,4 +53,56 @@ ReactDOM.render(
 	<HomePage/>,
 	document.getElementById('root')
 );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import React, {useState} from "react";
+import InputGroup from 'react-bootstrap/InputGroup';
+import FormControl from 'react-bootstrap/FormControl'
+
+
+function Input() {
+	const [inputValue, setInputValue] = useState('');
+	const handleInputChanges = (event) => {
+		setInputValue(event.target.value)
+		const [storageNews, setStorageNews  ]= useState({})
+		
+		//getNews().then(data=>{setNews(data)})
+	}
+	return (
+		<div>
+			<input onChange={handleInputChanges}/>
+			<div>{inputValue}</div>
+		</div>
+	)
+}
+
+export default Input;
+
+
+
+
+
+
+
+
+
+
+
 
