@@ -1,7 +1,7 @@
 const newsListObject = {
-	"status":
-		"ok", "totalResults":
-		10, "articles":
+	"status": "ok",
+	"totalResults": 10,
+	"articles":
 		[{
 			"source": {"id": "bbc-news", "name": "BBC News"},
 			"author": "BBC News",
