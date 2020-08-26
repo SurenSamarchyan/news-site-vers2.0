@@ -19,6 +19,4 @@ function Card(props) {
 		</Col>
 	)
 }
-
 export default Card;
-
