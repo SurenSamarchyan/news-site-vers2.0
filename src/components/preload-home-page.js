@@ -1,9 +1,8 @@
 import React from "react";
-import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 export default function PreloadHomePage (){
-	return (<Row>
+	return (<>
 		<Col xs={12} sm={6} lg={3}>
 			<div className='card_preload'></div>
 		</Col>
@@ -28,6 +27,6 @@ export default function PreloadHomePage (){
 		<Col xs={12} sm={6} lg={3}>
 			<div className='card_preload'></div>
 		</Col>
-	</Row>)
+	</>)
 	
 }

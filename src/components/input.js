@@ -1,25 +1,20 @@
 import React from "react";
-import InputGroup from 'react-bootstrap/InputGroup';
-import FormControl from 'react-bootstrap/FormControl'
+import InputGroup from "react-bootstrap/InputGroup";
+import FormControl from "react-bootstrap/FormControl"
+import Button from "react-bootstrap/Button";
+
+import './components-style/input.css'
 
 
 function Input(props) {
-	
-	
 	return (
-		/*<div>
-			<input onChange={props.handleInputChanges}>
-			</input>
-			<button onClick={props.request}> Click</button>
-		</div>*/
 		
-		<InputGroup>
-			<InputGroup.Prepend>
-				<InputGroup.Text>With textarea</InputGroup.Text>
-			</InputGroup.Prepend>
-			<FormControl as="textarea" aria-label="With textarea" />
-		</InputGroup>
+			<InputGroup>
+				<InputGroup.Prepend>
+					<Button onClick={props.request} variant="outline-primary" size='lg'>Search News</Button>
+				</InputGroup.Prepend>
+				<FormControl onChange={props.handleInputChanges} aria-describedby="basic-addon1" size='lg'/>
+			</InputGroup>
 	)
 }
-
 export default Input;

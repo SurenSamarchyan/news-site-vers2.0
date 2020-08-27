@@ -2,13 +2,14 @@ import React from "react";
 import FormCheck from "react-bootstrap/FormCheck";
 import Row from "react-bootstrap/Row";
 /*
-import './search-parametr.css'
+import './search-parameter.css'
 */
 
 
-export default function SearchParametr() {
+export default function SearchParameter() {
 	return (
-		<Row className='justify-content-md-center search-parameter' >
+		<Row className='justify-content-md-center'
+		     id='search-parameter'>
 			
 			<FormCheck
 				type='radio'

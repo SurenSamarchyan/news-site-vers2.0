@@ -7,7 +7,7 @@ import Card from "./components/card";
 import Input from "./components/input";
 import requestNewsContent from "./services/requestNewsContent";
 import PreloadHomePage from './components/preload-home-page';
-import SearchParametr from "./components/search-parametr";
+import SearchParameter from "./components/search-parameter";
 //Style
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.css'
@@ -15,7 +15,8 @@ import Row from 'react-bootstrap/Row';
 
 
 function HomePage() {
-	const [inputValue, setInputValue] = useState('row');
+	console.log('Home Page');
+	const [inputValue, setInputValue] = useState('');
 	const [storageNews, setStorageNews] = useState(false);
 	const [checkedValue, setCheckedValue] = useState('top-headlines');
 	
@@ -26,12 +27,11 @@ function HomePage() {
 	};
 	
 	useEffect(() => {
-			request();
+		setCheckedValue(document.querySelector(".search-parameter > .custom-checkbox" ).value);
+		console.log(checkedValue);
+		request();
 		}, [],
 	)
-	useEffect(()=>{
-	
-	})
 	
 	const handleInputChanges = (event) => {
 		setInputValue(event.target.value)
@@ -39,6 +39,9 @@ function HomePage() {
 	
 	return (
 		<div>
+			
+			
+			
 			<Input handleInputChanges={handleInputChanges} request={request} />
 			
 			
@@ -49,11 +52,11 @@ function HomePage() {
 				</ButtonGroup>
 			</Row>*/}
 			
-			<SearchParametr />
+			<SearchParameter />
 			<div id='news-container' className='container-fluid'>
-				{storageNews ?
+				{
 					<Row>
-						{storageNews.articles.map((news, index) => {
+						{storageNews ? storageNews.articles.map((news, index) => {
 							return (
 								<Card
 									key={index}
@@ -64,11 +67,10 @@ function HomePage() {
 									description={news.description}
 								/>
 							)
-						})
+						}):
+							<PreloadHomePage />
 						}
 					</Row>
-					:
-					<PreloadHomePage />
 				}
 			</div>
 		</div>
